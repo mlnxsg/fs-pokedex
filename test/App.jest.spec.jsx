@@ -26,9 +26,8 @@ describe('<App />', () => {
   it('shows error', async () => {
     axiosMock.get.mockRejectedValueOnce(new Error())
     await act(async () => {
-      render(<MemoryRouter><App/></MemoryRouter>
+      render(<MemoryRouter><App/></MemoryRouter>)
     })
     expect(screen.getByTestId('error')).toBeVisible()
   })
-
 })
