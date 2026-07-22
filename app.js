@@ -8,10 +8,16 @@ app.get('/version', (req, res) => {
   res.send('1')
 })
 
+app.get('/health', (req, res) => {
+  // eslint-disable-next-line no-constant-condition
+  if (true) throw('error...  ')
+  res.send('ok')
+})
+
 app.use(express.static('dist'))
 
 const start = async () => {
-  await app.listen(PORT)
+  await app.listen(PORT+1)
   console.log(`server started on port ${PORT}`)
 }
 
