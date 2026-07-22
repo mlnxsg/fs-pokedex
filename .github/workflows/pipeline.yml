@@ -71,7 +71,7 @@ jobs:
             Author: ${{ github.event.head_commit.author.name }}
 
   notify_failure:
-    needs: [build_and_test]
+    needs: [deploy]
     runs-on: ubuntu-latest
     if: ${{ failure() }}
     steps:
