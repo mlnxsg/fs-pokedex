@@ -1,0 +1,17 @@
+name: Health Check
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '*/15 * * * *'  # 每15分钟跑一次（测试完改成每天一次）
+
+jobs:
+  health_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check health
+        uses: jtalk/url-health-check-action@v4
+        with:
+          url: https://fs-pokedex-summer-fog-1206.fly.dev/health
+          max-attempts: 3
+          retry-delay: 5s
