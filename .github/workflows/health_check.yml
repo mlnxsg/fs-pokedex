@@ -2,8 +2,6 @@ name: Health Check
 
 on:
   workflow_dispatch:
-  schedule:
-  - cron: '*/15 * * * *'  # 每15分钟跑一次（测试完改成每天一次）
 
 jobs:
   health_check:
