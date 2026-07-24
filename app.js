@@ -9,7 +9,8 @@ app.get('/version', (req, res) => {
 })
 
 app.get('/health', (req, res) => {
-  res.send('ok')
+  // res.send('ok')
+  throw new Error('broken!') // 定时健康检查测试
 })
 
 app.use(express.static('dist'))
