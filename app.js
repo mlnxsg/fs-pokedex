@@ -8,7 +8,7 @@ app.get('/version', (req, res) => {
   res.send('3')
 })
 
-app.get('/health', (req, res) => {
+app.get('/health', () => {
   // res.send('ok')
   throw new Error('broken!') // 定时健康检查测试
 })
